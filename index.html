@@ -17,6 +17,7 @@
 <div class="o-nav-item" data-page="page-crm" onclick="showPage('page-crm')">💼 CRM</div>
 <div class="o-nav-item" data-page="page-purchases" onclick="showPage('page-purchases')">🚚 Закупівлі</div>
 <div class="o-nav-item" data-page="page-ai" onclick="showPage('page-ai')">🤖 AI Аналітик</div>
+<div class="o-nav-item" data-page="page-finance" onclick="showPage('page-finance')">💰 Фінанси</div>
 <div class="o-nav-item" data-page="page-settings" onclick="showPage('page-settings')">⚙️ Налаштування</div>
 </div>
 <div class="o-nav-right">
@@ -35,6 +36,7 @@
 <div class="o-sidebar-item" data-page="page-purchases" onclick="showPage('page-purchases')"><span class="o-sidebar-icon">🚚</span><span>Закупівлі</span></div>
 <div class="o-sidebar-section">Інтелект</div>
 <div class="o-sidebar-item" data-page="page-ai" onclick="showPage('page-ai')"><span class="o-sidebar-icon">🤖</span><span>AI Аналітик</span><span class="o-sidebar-badge" style="background:#DC3545">5</span></div>
+<div class="o-sidebar-item" data-page="page-finance" onclick="showPage('page-finance')"><span class="o-sidebar-icon">💰</span><span>Фінанси / 1С</span></div>
 <div class="o-sidebar-section">Комунікації</div>
 <div class="o-sidebar-item" onclick="togglePhone()"><span class="o-sidebar-icon">📞</span><span>Телефонія</span></div>
 <div class="o-sidebar-section">Система</div>
@@ -236,6 +238,62 @@
 </div>
 </div>
 
+</div>
+</div>
+
+<!-- PAGE: FINANCE -->
+<div id="page-finance" class="o-page">
+<div class="o-content">
+<div class="o-stats-row">
+<div class="o-stat-card success"><div class="o-stat-label">Чистий прибуток (P&L)</div><div class="o-stat-value">₴98,420</div><div class="o-stat-sub">Метод FIFO (як в 1С)</div></div>
+<div class="o-stat-card accent"><div class="o-stat-label">Каса та Рахунки</div><div class="o-stat-value">₴412,000</div><div class="o-stat-sub">UA: 280к, PL: 15к zł</div></div>
+<div class="o-stat-card warning"><div class="o-stat-label">Дебіторка (Нам винні)</div><div class="o-stat-value">₴156,000</div><div class="o-stat-sub">Очікуємо від Amazon/Rozetka</div></div>
+<div class="o-stat-card danger"><div class="o-stat-label">Кредиторка (Ми винні)</div><div class="o-stat-value">₴84,000</div><div class="o-stat-sub">Постачальникам та логістиці</div></div>
+</div>
+
+<div class="o-grid-2">
+<div class="o-settings-card">
+<h3>📊 Звіт про прибутки та збитки (P&L)</h3>
+<table class="o-table">
+<thead><tr><th>Стаття</th><th>Сума (грн)</th><th>% від виручки</th></tr></thead>
+<tbody>
+<tr><td><b>Виручка від продажів</b></td><td><b>₴452,000</b></td><td>100%</td></tr>
+<tr style="color:#666"><td>Собівартість (COGS)</td><td>-₴284,500</td><td>62.9%</td></tr>
+<tr><td><b>Валовий прибуток</b></td><td><b>₴167,500</b></td><td>37.1%</td></tr>
+<tr style="color:#666"><td>Операційні витрати (Оренда, з/п)</td><td>-₴45,000</td><td>9.9%</td></tr>
+<tr style="color:#666"><td>Логістика (НП, InPost)</td><td>-₴18,400</td><td>4.1%</td></tr>
+<tr style="color:#666"><td>Комісії маркетплейсів</td><td>-₴5,680</td><td>1.3%</td></tr>
+<hr>
+<tr style="background:#f8f9fa; font-weight:700"><td>ЧИСТИЙ ПРИБУТОК</td><td>₴98,420</td><td>21.8%</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="o-settings-card">
+<h3>🌍 Баланс по маркетплейсах (Дебіторка)</h3>
+<table class="o-table">
+<thead><tr><th>Маркетплейс</th><th>Валюта</th><th>До виплати</th><th>Еквівалент грн</th></tr></thead>
+<tbody>
+<tr><td>Amazon DE</td><td>€2,450</td><td>Очікує</td><td>₴102,900</td></tr>
+<tr><td>Allegro PL</td><td>3,200 zł</td><td>Очікує</td><td>₴31,360</td></tr>
+<tr><td>Rozetka</td><td>₴15,400</td><td>Виплата 25.04</td><td>₴15,400</td></tr>
+<tr><td>Prom.ua</td><td>₴6,340</td><td>Активно</td><td>₴6,340</td></tr>
+</tbody>
+</table>
+<button class="o-btn" style="margin-top:10px">Звірка залишків з 1С →</button>
+</div>
+</div>
+
+<div class="o-settings-card" style="margin-top:20px">
+<h3>👥 Розрахунок зарплати (Бонуси від прибутку)</h3>
+<table class="o-table">
+<thead><tr><th>Менеджер</th><th>Валовий прибуток</th><th>% бонуса</th><th>Сума бонуса</th><th>Статус</th></tr></thead>
+<tbody>
+<tr><td>Олена К. (UA)</td><td>₴86,400</td><td>5%</td><td>₴4,320</td><td><span class="o-badge o-badge-process">Розраховано</span></td></tr>
+<tr><td>Marek W. (PL)</td><td>6,800 zł</td><td>3%</td><td>204 zł</td><td><span class="o-badge o-badge-done">Виплачено</span></td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 

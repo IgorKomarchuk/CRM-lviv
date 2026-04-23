@@ -19,6 +19,7 @@ function showPage(pageId) {
         'page-crm': 'CRM — Воронка продажів',
         'page-purchases': 'Закупівлі',
         'page-ai': '🤖 AI Аналітик — Висновки та рекомендації',
+        'page-finance': '💰 Фінанси та Управлінський облік (Методи 1С)',
         'page-telephony': 'Телефонія',
         'page-analytics': 'Аналітика',
         'page-settings': 'Налаштування'

@@ -45,6 +45,8 @@ body {
 
 .o-navbar-brand span { font-size: 10px; opacity: 0.7; font-weight: 400; }
 
+.o-mobile-menu-btn { display: none; }
+
 .o-nav-items { display: flex; gap: 2px; flex: 1; }
 
 .o-nav-item {
@@ -458,4 +460,50 @@ table.o-table tbody td {
     .o-sidebar-badge { display: none; }
     .o-main { margin-left: 60px; }
     .o-grid-2, .o-grid-equal, .o-settings-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .o-mobile-menu-btn { 
+        display: flex; align-items: center; justify-content: center; 
+        width: 36px; height: 36px; color: white; font-size: 22px; 
+        cursor: pointer; margin-right: 12px; margin-left: -4px;
+    }
+    
+    .o-navbar-brand { font-size: 15px; margin-right: auto; }
+    .o-navbar-brand span { display: none; }
+    
+    .o-nav-items { display: none; } /* Hide top nav items on mobile to save space, use sidebar */
+    
+    .o-sidebar {
+        width: 260px;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+        z-index: 2000;
+        top: 0;
+        height: 100vh;
+        padding-top: 20px;
+    }
+    .o-sidebar.open { transform: translateX(0); }
+    
+    /* Restore text in open sidebar */
+    .o-sidebar-item span { display: inline-block; }
+    .o-sidebar-section { display: block; }
+    .o-sidebar-badge { display: inline-block; }
+    
+    .o-main { margin-left: 0; width: 100%; }
+    
+    .o-control-panel { flex-direction: column; align-items: flex-start; gap: 12px; padding: 12px 16px; }
+    .o-cp-actions { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+    
+    .o-stats-row { grid-template-columns: 1fr; gap: 12px; }
+    .o-stat-card { padding: 16px; }
+    
+    .o-table-wrap { border-radius: 0; border-left: none; border-right: none; margin: 0 -24px 24px; width: calc(100% + 48px); }
+    .o-table-wrap table { display: block; overflow-x: auto; white-space: nowrap; }
+    
+    .o-kanban-board { padding-bottom: 20px; }
+    .o-kanban-column { min-width: 85vw; max-width: 85vw; }
+    
+    .o-phone-panel { width: 90vw; right: 5vw; bottom: 80px; }
 }

@@ -27,7 +27,33 @@ function showPage(pageId) {
     };
     const bc = document.getElementById('breadcrumb-title');
     if (bc) bc.textContent = titles[pageId] || pageId;
+
+    // Close sidebar on mobile after clicking
+    if (window.innerWidth <= 768) {
+        const sidebar = document.querySelector('.o-sidebar');
+        if (sidebar) sidebar.classList.remove('open');
+    }
+
+    if (pageId === 'page-orders') {
+        // renderOrders(); // placeholder
+    }
 }
+
+// Mobile sidebar toggle
+function toggleSidebar() {
+    document.querySelector('.o-sidebar').classList.toggle('open');
+}
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', function(e) {
+    const sidebar = document.querySelector('.o-sidebar');
+    const menuBtn = document.querySelector('.o-mobile-menu-btn');
+    if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('open')) {
+        if (!e.target.closest('.o-sidebar') && (!menuBtn || !e.target.closest('.o-mobile-menu-btn'))) {
+            sidebar.classList.remove('open');
+        }
+    }
+});
 
 // Phone panel toggle
 function togglePhone() {

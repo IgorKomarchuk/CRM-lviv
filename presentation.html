@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комерційна Пропозиція — Найкраща CRM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #714B67;
+            --primary-light: #8F6B85;
+            --dark: #1e1e2f;
+            --light: #f8f9fa;
+            --accent: #28A745;
+            --text: #333;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(113, 75, 103, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(113, 75, 103, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(113, 75, 103, 0); }
+        }
+
+        .animate { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #2d2d44 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; background: -webkit-linear-gradient(#fff, #e0e0e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: #cbd5e1; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .cta-btn:hover { background: var(--primary-light); transform: translateY(-3px); }
+
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        /* Killer Pitch Section */
+        .killer-pitch {
+            background: white;
+            border-left: 6px solid var(--primary);
+            padding: 40px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        .killer-pitch p { font-size: 1.3rem; font-style: italic; color: #475569; }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center; font-size: 2.5rem; font-weight: 800;
+            margin-bottom: 50px; color: var(--dark);
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px;
+        }
+        .comp-card {
+            background: white; padding: 40px; border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .comp-card.bad { border-top: 5px solid #DC3545; }
+        .comp-card.good { border-top: 5px solid var(--primary); transform: scale(1.02); }
+        .comp-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
+        .comp-list { list-style: none; }
+        .comp-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .comp-card.bad .comp-list li::before { content: "❌"; position: absolute; left: 0; }
+        .comp-card.good .comp-list li::before { content: "✅"; position: absolute; left: 0; }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+        .feature-card {
+            background: white; padding: 30px; border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: inline-block; }
+        .feature-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .killer-pitch { padding: 25px; margin-top: 0; }
+            .comp-card.good { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="animate">
+            <h1>Власна ERP-система</h1>
+            <p>Створена спеціально під ваші процеси. Швидша, розумніша та вигідніша за будь-яке коробкове рішення.</p>
+            <a href="index.html" class="cta-btn">Відкрити Живий Прототип</a>
+        </div>
+    </section>
+
+    <!-- KILLER PITCH -->
+    <div class="container animate delay-1">
+        <div class="killer-pitch">
+            <p>"Конкуренти пропонують Odoo Community — це безкоштовна, урізана версія європейської програми без нормальної бухгалтерії, яку вони будуть 'допилювати милицями' за ваші гроші місяцями. Вони показують текст.</p>
+            <p style="margin-top: 15px;"><strong>Ми показуємо працюючий продукт.</strong> Наша архітектура розроблена під ваші 11 колонок Excel, маркетплейси та українські реалії. Тут є AI-аналітик та Оборотно-сальдова відомість, яких немає в Odoo Community. І ця система буде належати ВАМ."</p>
+        </div>
+    </div>
+
+    <!-- COMPARISON -->
+    <div class="container animate delay-2">
+        <h2 class="section-title">Odoo Community vs Наша CRM</h2>
+        <div class="comparison-grid">
+            <div class="comp-card bad">
+                <h3>Odoo Community (Пропозиція конкурента)</h3>
+                <ul class="comp-list">
+                    <li>Урізаний безкоштовний модуль без управлінського обліку.</li>
+                    <li>Дорогі платні модулі для інтеграції Нової Пошти, ПРРО (Checkbox).</li>
+                    <li>Роздільні модулі: складно об'єднати залишки UA/PL та маржу в одному вікні.</li>
+                    <li>Аналітика "минулого століття": ви самі повинні шукати проблеми на графіках.</li>
+                </ul>
+            </div>
+            <div class="comp-card good">
+                <h3>Наша Власна ERP (Те, що ми зробили)</h3>
+                <ul class="comp-list">
+                    <li><strong>Повноцінна бухгалтерія 1С</strong> (План рахунків, ОСВ, Банк-клієнт).</li>
+                    <li><strong>Пряма API інтеграція</strong> з банками та ЕДО без прихованих платежів.</li>
+                    <li><strong>Склад з вашого Excel:</strong> всі 11 колонок, маржа та залишки UA/PL в один рядок.</li>
+                    <li><strong>AI-Аналітик:</strong> штучний інтелект сам знаходить помилки менеджерів та падіння маржі.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT WE BUILT -->
+    <div class="container animate delay-3">
+        <h2 class="section-title">Що вже реалізовано в прототипі</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h4>Склад на 11 колонок</h4>
+                <p>Повна інтеграція вашої бізнес-логіки. Одночасний контроль залишків у Польщі та Україні. Автоматичний розрахунок рентабельності.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h4>6 Маркетплейсів в 1 вікні</h4>
+                <p>Rozetka, Prom, OLX, Epicentr, Allegro, Amazon. Єдина черга замовлень. Менеджерам більше не треба перемикати вкладки.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h4>Розумна Телефонія</h4>
+                <p>Пряма інтеграція з UniTalk (UA) та Zadarmo (PL). Картка клієнта спливає ще до підняття слухавки.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h4>AI Аналітик</h4>
+                <p>Цифровий аудитор. Попереджає про закінчення товару на складі та завислі замовлення в менеджерів.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h4>Бухгалтерія та Фінанси</h4>
+                <p>Заміна 1С. P&L звіт, Оборотно-сальдова відомість, авто-рознесення платежів з Monobank та ПриватБанк.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h4>CRM Канбан</h4>
+                <p>Візуальна воронка продажів для опту та B2B клієнтів. Чіткий контроль етапів угоди.</p>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html" class="cta-btn" style="font-size: 1.3rem; padding: 20px 50px;">Поклікати Інтерфейс Наживо →</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background: var(--dark); color: #888; text-align: center; padding: 30px; margin-top: 60px;">
+        <p>© 2026. Розроблено як кастомне рішення для міжнародного бізнесу.</p>
+    </footer>
+
+    <script>
+        // Simple scroll animation trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate').forEach((el) => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

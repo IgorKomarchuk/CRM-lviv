@@ -18,6 +18,7 @@
 <div class="o-nav-item" data-page="page-purchases" onclick="showPage('page-purchases')">🚚 Закупівлі</div>
 <div class="o-nav-item" data-page="page-ai" onclick="showPage('page-ai')">🤖 AI Аналітик</div>
 <div class="o-nav-item" data-page="page-finance" onclick="showPage('page-finance')">💰 Фінанси</div>
+<div class="o-nav-item" data-page="page-accounting" onclick="showPage('page-accounting')">📄 Бухгалтерія</div>
 <div class="o-nav-item" data-page="page-settings" onclick="showPage('page-settings')">⚙️ Налаштування</div>
 </div>
 <div class="o-nav-right">
@@ -36,7 +37,9 @@
 <div class="o-sidebar-item" data-page="page-purchases" onclick="showPage('page-purchases')"><span class="o-sidebar-icon">🚚</span><span>Закупівлі</span></div>
 <div class="o-sidebar-section">Інтелект</div>
 <div class="o-sidebar-item" data-page="page-ai" onclick="showPage('page-ai')"><span class="o-sidebar-icon">🤖</span><span>AI Аналітик</span><span class="o-sidebar-badge" style="background:#DC3545">5</span></div>
-<div class="o-sidebar-item" data-page="page-finance" onclick="showPage('page-finance')"><span class="o-sidebar-icon">💰</span><span>Фінанси / 1С</span></div>
+<div class="o-sidebar-section">Облік та Фінанси</div>
+<div class="o-sidebar-item" data-page="page-finance" onclick="showPage('page-finance')"><span class="o-sidebar-icon">💰</span><span>Управлінський</span></div>
+<div class="o-sidebar-item" data-page="page-accounting" onclick="showPage('page-accounting')"><span class="o-sidebar-icon">📄</span><span>Бухгалтерія 1С</span></div>
 <div class="o-sidebar-section">Комунікації</div>
 <div class="o-sidebar-item" onclick="togglePhone()"><span class="o-sidebar-icon">📞</span><span>Телефонія</span></div>
 <div class="o-sidebar-section">Система</div>
@@ -294,6 +297,65 @@
 </tbody>
 </table>
 </div>
+</div>
+</div>
+
+<!-- PAGE: ACCOUNTING -->
+<div id="page-accounting" class="o-page">
+<div class="o-content">
+
+<!-- Bank Sync -->
+<div class="o-settings-card" style="margin-bottom: 20px;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+    <h3 style="margin:0;">🏦 Банк-клієнт (Авто-рознесення платежів)</h3>
+    <button class="o-btn o-btn-primary">↻ Синхронізувати API банків</button>
+</div>
+<p style="font-size:13px; color:#666; margin-bottom:15px;">Пряма інтеграція. Забудьте про ручний експорт/імпорт CSV виписок як в 1С.</p>
+<table class="o-table">
+<thead><tr><th>Дата</th><th>Банк</th><th>Контрагент / Призначення</th><th>Сума</th><th>Статус рознесення</th></tr></thead>
+<tbody>
+<tr><td>Сьогодні 10:15</td><td><span class="o-badge" style="background:#000;color:#fff">Monobank</span></td><td>ФОП Іванов / Оплата за рахунком №45</td><td><span class="o-margin-good">+₴14,500</span></td><td><span class="o-badge o-badge-done">Зв'язано з Замовленням #PRM-8811</span></td></tr>
+<tr><td>Сьогодні 09:30</td><td><span class="o-badge" style="background:#8AC832;color:#fff">ПриватБанк</span></td><td>ТОВ "Нова Пошта" / Логістичні послуги</td><td><span class="o-margin-bad">-₴2,340</span></td><td><span class="o-badge o-badge-process">Рознесено у Витрати (Логістика)</span></td></tr>
+<tr><td>Вчора 18:00</td><td><span class="o-badge" style="background:#E3000F;color:#fff">mBank PL</span></td><td>Allegro sp. z o.o. / Виплата</td><td><span class="o-margin-good">+3,200 zł</span></td><td><span class="o-badge o-badge-done">Зв'язано з Дебіторкою</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Primary Documents -->
+<div class="o-settings-card" style="margin-bottom: 20px;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+    <h3 style="margin:0;">📄 Реєстр первинних документів (Заміна 1С)</h3>
+    <div>
+        <button class="o-btn">+ Рахунок-фактура</button>
+        <button class="o-btn">+ Видаткова накладна</button>
+        <button class="o-btn">+ Акт звірки</button>
+    </div>
+</div>
+<table class="o-table">
+<thead><tr><th>№ Документа</th><th>Тип</th><th>Контрагент</th><th>Сума</th><th>ЕДО (Вчасно/Paperless)</th><th>Дія</th></tr></thead>
+<tbody>
+<tr><td>ВН-00124</td><td>Видаткова накладна</td><td>ТОВ "Пивоварня"</td><td>₴48,000</td><td><span class="o-badge o-badge-done">Підписано КЕП</span></td><td><button class="o-btn" style="padding:2px 8px;font-size:11px">PDF</button></td></tr>
+<tr><td>РХ-00892</td><td>Рахунок-фактура</td><td>ФОП Петренко</td><td>₴12,500</td><td><span class="o-badge o-badge-process">Відправлено клієнту</span></td><td><button class="o-btn" style="padding:2px 8px;font-size:11px">PDF</button></td></tr>
+<tr><td>АЗ-00045</td><td>Акт звірки</td><td>Amazon EU S.a.r.l.</td><td>€2,450</td><td><span class="o-badge o-badge-new">Очікує підпису</span></td><td><button class="o-btn" style="padding:2px 8px;font-size:11px">PDF</button></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ОСВ Preview -->
+<div class="o-settings-card">
+<h3 style="margin-top:0;">📒 Оборотно-сальдова відомість (ОСВ)</h3>
+<p style="font-size:13px; color:#666; margin-bottom:15px;">Управлінський баланс подвійного запису. Зрозумілий інтерфейс для власника та бухгалтера.</p>
+<table class="o-table">
+<thead><tr><th>Рахунок</th><th>Сальдо на початок (Дт)</th><th>Обороти Дт</th><th>Обороти Кт</th><th>Сальдо на кінець (Дт)</th></tr></thead>
+<tbody>
+<tr><td><b>30. Каса (Готівка)</b></td><td>₴45,000</td><td>₴12,000</td><td>₴5,000</td><td><b>₴52,000</b></td></tr>
+<tr><td><b>31. Рахунки в банках</b></td><td>₴210,000</td><td>₴145,000</td><td>₴84,000</td><td><b>₴271,000</b></td></tr>
+<tr><td><b>36. Розрахунки з покупцями</b></td><td>₴15,000</td><td>₴80,000</td><td>₴75,000</td><td><b>₴20,000</b></td></tr>
+<tr><td><b>28. Товари на складі</b></td><td>₴850,000</td><td>₴120,000</td><td>₴95,000</td><td><b>₴875,000</b></td></tr>
+</tbody>
+</table>
+</div>
+
 </div>
 </div>
 

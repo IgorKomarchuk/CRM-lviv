@@ -20,6 +20,7 @@ function showPage(pageId) {
         'page-purchases': 'Закупівлі',
         'page-ai': '🤖 AI Аналітик — Висновки та рекомендації',
         'page-finance': '💰 Фінанси та Управлінський облік (Методи 1С)',
+        'page-accounting': '📄 Бухгалтерія та Первинні документи',
         'page-telephony': 'Телефонія',
         'page-analytics': 'Аналітика',
         'page-settings': 'Налаштування'

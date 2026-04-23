@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Найкраща CRM в світі</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="o-navbar">
+<div class="o-navbar-brand">🌍 Найкраща CRM <span>в світі v1.0</span></div>
+<div class="o-nav-items">
+<div class="o-nav-item active" data-page="page-dashboard" onclick="showPage('page-dashboard')">📊 Головна</div>
+<div class="o-nav-item" data-page="page-products" onclick="showPage('page-products')">📦 Склад</div>
+<div class="o-nav-item" data-page="page-orders" onclick="showPage('page-orders')">🛒 Замовлення <span class="o-nav-badge">12</span></div>
+<div class="o-nav-item" data-page="page-crm" onclick="showPage('page-crm')">💼 CRM</div>
+<div class="o-nav-item" data-page="page-purchases" onclick="showPage('page-purchases')">🚚 Закупівлі</div>
+<div class="o-nav-item" data-page="page-ai" onclick="showPage('page-ai')">🤖 AI Аналітик</div>
+<div class="o-nav-item" data-page="page-settings" onclick="showPage('page-settings')">⚙️ Налаштування</div>
+</div>
+<div class="o-nav-right">
+<span id="live-clock" style="color:#fff;font-size:13px;opacity:0.8"></span>
+<div class="o-user-menu"><div class="o-user-avatar">АД</div><span style="font-size:13px">Адмін</span></div>
+</div>
+</nav>
+
+<!-- SIDEBAR -->
+<aside class="o-sidebar">
+<div class="o-sidebar-section">Модулі</div>
+<div class="o-sidebar-item active" data-page="page-dashboard" onclick="showPage('page-dashboard')"><span class="o-sidebar-icon">📊</span><span>Дашборд</span></div>
+<div class="o-sidebar-item" data-page="page-products" onclick="showPage('page-products')"><span class="o-sidebar-icon">📦</span><span>Товари</span><span class="o-sidebar-badge">321</span></div>
+<div class="o-sidebar-item" data-page="page-orders" onclick="showPage('page-orders')"><span class="o-sidebar-icon">🛒</span><span>Замовлення</span><span class="o-sidebar-badge">12</span></div>
+<div class="o-sidebar-item" data-page="page-crm" onclick="showPage('page-crm')"><span class="o-sidebar-icon">💼</span><span>CRM Воронка</span></div>
+<div class="o-sidebar-item" data-page="page-purchases" onclick="showPage('page-purchases')"><span class="o-sidebar-icon">🚚</span><span>Закупівлі</span></div>
+<div class="o-sidebar-section">Інтелект</div>
+<div class="o-sidebar-item" data-page="page-ai" onclick="showPage('page-ai')"><span class="o-sidebar-icon">🤖</span><span>AI Аналітик</span><span class="o-sidebar-badge" style="background:#DC3545">5</span></div>
+<div class="o-sidebar-section">Комунікації</div>
+<div class="o-sidebar-item" onclick="togglePhone()"><span class="o-sidebar-icon">📞</span><span>Телефонія</span></div>
+<div class="o-sidebar-section">Система</div>
+<div class="o-sidebar-item" data-page="page-settings" onclick="showPage('page-settings')"><span class="o-sidebar-icon">⚙️</span><span>Налаштування</span></div>
+</aside>
+
+<!-- MAIN -->
+<main class="o-main">
+<div class="o-control-panel">
+<div class="o-breadcrumb"><span id="breadcrumb-title" class="o-breadcrumb-item">Головна панель</span></div>
+<div class="o-cp-actions">
+<button class="o-btn" onclick="togglePhone()">📞 Телефонія</button>
+<button class="o-btn o-btn-primary">+ Створити</button>
+</div>
+</div>
+
+<!-- PAGE: DASHBOARD -->
+<div id="page-dashboard" class="o-page active">
+<div class="o-content">
+<div class="o-stats-row">
+<div class="o-stat-card accent"><div class="o-stat-label">Прибуток (місяць)</div><div class="o-stat-value">₴142,500</div><div class="o-stat-sub">↑ 12.5%</div></div>
+<div class="o-stat-card success"><div class="o-stat-label">Замовлення сьогодні</div><div class="o-stat-value">48</div><div class="o-stat-sub">↑ 5 нових</div></div>
+<div class="o-stat-card warning"><div class="o-stat-label">Товари на складі UA</div><div class="o-stat-value">2,847</div><div class="o-stat-sub">14 з низьким залишком</div></div>
+<div class="o-stat-card danger"><div class="o-stat-label">Пропущені дзвінки</div><div class="o-stat-value">3</div><div class="o-stat-sub">UniTalk: 2, Zadarmo: 1</div></div>
+</div>
+<div class="o-chart-container">
+<div class="o-chart-title">Продажі по каналах (тис. грн)</div>
+<div class="o-bar-chart" style="margin-bottom:30px">
+<div class="o-bar" data-height="85" style="background:#714B67;height:0"><span class="o-bar-value">128к</span><span class="o-bar-label">Rozetka</span></div>
+<div class="o-bar" data-height="60" style="background:#8F6B85;height:0"><span class="o-bar-value">91к</span><span class="o-bar-label">Prom</span></div>
+<div class="o-bar" data-height="45" style="background:#17A2B8;height:0"><span class="o-bar-value">68к</span><span class="o-bar-label">Amazon</span></div>
+<div class="o-bar" data-height="35" style="background:#28A745;height:0"><span class="o-bar-value">53к</span><span class="o-bar-label">Allegro</span></div>
+<div class="o-bar" data-height="25" style="background:#FFC107;height:0"><span class="o-bar-value">38к</span><span class="o-bar-label">OLX</span></div>
+<div class="o-bar" data-height="20" style="background:#DC3545;height:0"><span class="o-bar-value">30к</span><span class="o-bar-label">Epicentr</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAGE: PRODUCTS -->
+<div id="page-products" class="o-page">
+<div class="o-content">
+<div class="o-table-wrap">
+<div class="o-table-header"><span class="o-table-title">Товари — Повний звіт (11 колонок з вашого Excel)</span><input class="o-search-box" id="product-search" placeholder="Пошук по артикулу або назві..." oninput="filterProducts()"></div>
+<div style="overflow-x:auto">
+<table class="o-table"><thead><tr><th>Код 1С</th><th>Артикул</th><th>Номенклатура</th><th>К-сть продано</th><th>Виручка з ПДВ</th><th>Собів-ть з ПДВ</th><th>Валовий прибуток</th><th>Рентаб. %</th><th>Собів-ть (1 шт)</th><th>Ціна продажу</th><th>Залишок</th></tr></thead>
+<tbody id="products-tbody">
+<tr><td>100002057</td><td>ВА-1</td><td>Вугілля активоване кокосове (1000 г)</td><td>3</td><td>345.00 ₴</td><td>218.63 ₴</td><td><span class="o-margin-good">126.37 ₴</span></td><td><span class="o-margin-good">36.63%</span></td><td>72.88 ₴</td><td>115.00 ₴</td><td><span class="o-stock-ua">UA:300</span> <span class="o-stock-pl">PL:45</span></td></tr>
+<tr><td>100000524</td><td>HRDTY48-D</td><td>Дріжджі спиртові турбо Hot Rod 48 на 25 л</td><td>10</td><td>740.00 ₴</td><td>678.75 ₴</td><td><span class="o-margin-bad">61.25 ₴</span></td><td><span class="o-margin-bad">8.28%</span></td><td>67.88 ₴</td><td>74.00 ₴</td><td><span class="o-stock-ua">UA:21</span> <span class="o-stock-pl">PL:150</span></td></tr>
+<tr><td>100003891</td><td>BN-882</td><td>Набір для бродіння Pro</td><td>5</td><td>6,250.00 ₴</td><td>4,750.00 ₴</td><td><span class="o-margin-good">1,500.00 ₴</span></td><td><span class="o-margin-good">24.00%</span></td><td>950.00 ₴</td><td>1,250.00 ₴</td><td><span class="o-stock-ua" style="color:var(--odoo-danger)">UA:4</span> <span class="o-stock-pl">PL:0</span></td></tr>
+<tr><td>100001122</td><td>DST-500</td><td>Дистилятор мідний 500 мл</td><td>2</td><td>6,400.00 ₴</td><td>4,200.00 ₴</td><td><span class="o-margin-good">2,200.00 ₴</span></td><td><span class="o-margin-good">34.38%</span></td><td>2,100.00 ₴</td><td>3,200.00 ₴</td><td><span class="o-stock-ua">UA:18</span> <span class="o-stock-pl">PL:7</span></td></tr>
+<tr><td>100004556</td><td>FLT-10</td><td>Фільтр вугільний 10 л</td><td>8</td><td>2,320.00 ₴</td><td>1,440.00 ₴</td><td><span class="o-margin-good">880.00 ₴</span></td><td><span class="o-margin-good">37.93%</span></td><td>180.00 ₴</td><td>290.00 ₴</td><td><span class="o-stock-ua">UA:56</span> <span class="o-stock-pl">PL:23</span></td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAGE: ORDERS -->
+<div id="page-orders" class="o-page">
+<div class="o-content">
+<div class="o-table-wrap">
+<div class="o-table-header"><span class="o-table-title">Замовлення з усіх каналів</span><input class="o-search-box" id="order-search" placeholder="Пошук..." oninput="filterOrders()"></div>
+<table class="o-table"><thead><tr><th>ID</th><th>Джерело</th><th>Клієнт</th><th>Товар</th><th>Сума</th><th>Статус</th><th>Дата</th></tr></thead>
+<tbody id="orders-tbody">
+<tr><td>#AMZ-9842</td><td><span class="o-badge" style="background:#FF990022;color:#FF9900">Amazon</span></td><td>Klaus M.</td><td>Дистилятор мідний 500 мл</td><td>€89.00</td><td><span class="o-badge o-badge-new">Нове</span></td><td>23.04.2026</td></tr>
+<tr><td>#RZK-20349</td><td><span class="o-badge" style="background:#00A04622;color:#00A046">Rozetka</span></td><td>Іванов С.</td><td>Вугілля активоване (1000 г) ×3</td><td>₴1,450</td><td><span class="o-badge o-badge-process">Обробка</span></td><td>23.04.2026</td></tr>
+<tr><td>#PRM-8811</td><td><span class="o-badge" style="background:#2196F322;color:#2196F3">Prom</span></td><td>Петренко О.</td><td>Набір для бродіння Pro</td><td>₴1,250</td><td><span class="o-badge o-badge-done">Відправлено</span></td><td>22.04.2026</td></tr>
+<tr><td>#ALG-5512</td><td><span class="o-badge" style="background:#FF5A0022;color:#FF5A00">Allegro</span></td><td>Kowalski J.</td><td>Фільтр вугільний 10 л</td><td>85 zł</td><td><span class="o-badge o-badge-new">Нове</span></td><td>23.04.2026</td></tr>
+<tr><td>#OLX-3321</td><td><span class="o-badge" style="background:#00234822;color:#002348">OLX</span></td><td>Ковальчук М.</td><td>Дріжджі Hot Rod 48 ×5</td><td>₴370</td><td><span class="o-badge o-badge-process">Обробка</span></td><td>22.04.2026</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- PAGE: CRM KANBAN -->
+<div id="page-crm" class="o-page">
+<div class="o-content">
+<div class="o-kanban-board">
+<div class="o-kanban-column"><div class="o-kanban-col-header">Нові ліди <span class="o-kanban-col-count">3</span></div><div class="o-kanban-col-body">
+<div class="o-kanban-card"><div class="o-kanban-card-title">ТОВ «Пивовар»</div><div class="o-kanban-card-sub">Запит на обладнання для пивоварні</div><div class="o-kanban-card-amount">₴48,000</div><div class="o-kanban-card-tag">Опт</div></div>
+<div class="o-kanban-card"><div class="o-kanban-card-title">Kowalski Sp.</div><div class="o-kanban-card-sub">Allegro — набори для бродіння</div><div class="o-kanban-card-amount">2,400 zł</div><div class="o-kanban-card-tag">Польща</div></div>
+<div class="o-kanban-card"><div class="o-kanban-card-title">Сидоренко А.</div><div class="o-kanban-card-sub">Дзвінок з Rozetka, хоче опт</div><div class="o-kanban-card-amount">₴12,000</div><div class="o-kanban-card-tag">Роздріб→Опт</div></div>
+</div></div>
+<div class="o-kanban-column"><div class="o-kanban-col-header">Переговори <span class="o-kanban-col-count">2</span></div><div class="o-kanban-col-body">
+<div class="o-kanban-card"><div class="o-kanban-card-title">FermentPro GmbH</div><div class="o-kanban-card-sub">Amazon DE — постійне постачання</div><div class="o-kanban-card-amount">€5,200/міс</div><div class="o-kanban-card-tag">B2B</div></div>
+<div class="o-kanban-card"><div class="o-kanban-card-title">«Напої Львова»</div><div class="o-kanban-card-sub">Дистилятори + фільтри</div><div class="o-kanban-card-amount">₴86,000</div><div class="o-kanban-card-tag">Опт</div></div>
+</div></div>
+<div class="o-kanban-column"><div class="o-kanban-col-header">Рахунок виставлено <span class="o-kanban-col-count">1</span></div><div class="o-kanban-col-body">
+<div class="o-kanban-card"><div class="o-kanban-card-title">ТОВ «Хмільна Країна»</div><div class="o-kanban-card-sub">Повний комплект обладнання</div><div class="o-kanban-card-amount">₴124,000</div><div class="o-kanban-card-tag">Опт</div></div>
+</div></div>
+<div class="o-kanban-column"><div class="o-kanban-col-header">Виграно ✓ <span class="o-kanban-col-count">4</span></div><div class="o-kanban-col-body">
+<div class="o-kanban-card" style="border-left:3px solid #28A745"><div class="o-kanban-card-title">Bierhaus Berlin</div><div class="o-kanban-card-sub">Amazon DE — разова закупка</div><div class="o-kanban-card-amount">€3,100</div></div>
+<div class="o-kanban-card" style="border-left:3px solid #28A745"><div class="o-kanban-card-title">ФОП Мельник</div><div class="o-kanban-card-sub">Prom — обладнання</div><div class="o-kanban-card-amount">₴28,500</div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<!-- PAGE: PURCHASES -->
+<div id="page-purchases" class="o-page">
+<div class="o-content">
+<div class="o-table-wrap">
+<div class="o-table-header"><span class="o-table-title">Замовлення постачальникам</span><button class="o-btn o-btn-primary" style="margin-left:auto">+ Нове замовлення</button></div>
+<table class="o-table"><thead><tr><th>№</th><th>Постачальник</th><th>Товари</th><th>Сума</th><th>Статус</th><th>Очікувана дата</th></tr></thead>
+<tbody>
+<tr><td>PO-2026-041</td><td>China Direct Ltd.</td><td>Дистилятори мідні ×50</td><td>$4,200</td><td><div class="o-purchase-status"><span class="o-status-dot yellow"></span> В дорозі</div></td><td>28.04.2026</td></tr>
+<tr><td>PO-2026-040</td><td>ТОВ «ХімРесурс»</td><td>Вугілля кокосове ×200 кг</td><td>₴18,400</td><td><div class="o-purchase-status"><span class="o-status-dot green"></span> Доставлено</div></td><td>20.04.2026</td></tr>
+<tr><td>PO-2026-039</td><td>Ferment Supply PL</td><td>Дріжджі Hot Rod ×500 шт</td><td>8,500 zł</td><td><div class="o-purchase-status"><span class="o-status-dot red"></span> Затримка!</div></td><td>15.04.2026</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- PAGE: SETTINGS -->
+<div id="page-settings" class="o-page">
+<div class="o-content">
+<div class="o-settings-grid">
+<div class="o-settings-card">
+<h3>👥 Користувачі та ролі</h3>
+<table class="o-table"><thead><tr><th>Ім'я</th><th>Email</th><th>Роль</th><th>Регіон</th></tr></thead>
+<tbody>
+<tr><td>Власник</td><td>admin@bigcat.ua</td><td><span class="o-badge o-badge-process">Адмін</span></td><td>UA + PL</td></tr>
+<tr><td>Олена К.</td><td>olena@bigcat.ua</td><td><span class="o-badge o-badge-done">Менеджер</span></td><td>UA</td></tr>
+<tr><td>Marek W.</td><td>marek@bigcat.pl</td><td><span class="o-badge o-badge-done">Менеджер</span></td><td>PL</td></tr>
+<tr><td>Андрій Л.</td><td>andriy@bigcat.ua</td><td><span class="o-badge o-badge-new">Склад</span></td><td>UA</td></tr>
+</tbody></table>
+<button class="o-btn o-btn-primary" style="margin-top:12px">+ Додати користувача</button>
+</div>
+<div class="o-settings-card">
+<h3>🔗 Інтеграції</h3>
+<div class="o-form-group"><label class="o-form-label">Rozetka API</label><div class="o-purchase-status"><span class="o-status-dot green"></span> Підключено</div></div>
+<div class="o-form-group"><label class="o-form-label">Prom API</label><div class="o-purchase-status"><span class="o-status-dot green"></span> Підключено</div></div>
+<div class="o-form-group"><label class="o-form-label">Amazon SP-API</label><div class="o-purchase-status"><span class="o-status-dot yellow"></span> Очікує ключ</div></div>
+<div class="o-form-group"><label class="o-form-label">Allegro API</label><div class="o-purchase-status"><span class="o-status-dot yellow"></span> Очікує ключ</div></div>
+<div class="o-form-group"><label class="o-form-label">OLX API</label><div class="o-purchase-status"><span class="o-status-dot red"></span> Не підключено</div></div>
+<div class="o-form-group"><label class="o-form-label">Epicentr API</label><div class="o-purchase-status"><span class="o-status-dot red"></span> Не підключено</div></div>
+<div class="o-form-group"><label class="o-form-label">UniTalk (UA)</label><div class="o-purchase-status"><span class="o-status-dot green"></span> Активний</div></div>
+<div class="o-form-group"><label class="o-form-label">Zadarmo (PL)</label><div class="o-purchase-status"><span class="o-status-dot green"></span> Активний</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAGE: AI ANALYTICS -->
+<div id="page-ai" class="o-page">
+<div class="o-content">
+<div class="o-stats-row">
+<div class="o-stat-card danger"><div class="o-stat-label">🔴 Критичні проблеми</div><div class="o-stat-value">2</div><div class="o-stat-sub">Потребують негайної уваги</div></div>
+<div class="o-stat-card warning"><div class="o-stat-label">🟡 Попередження</div><div class="o-stat-value">3</div><div class="o-stat-sub">Ризики найближчих днів</div></div>
+<div class="o-stat-card success"><div class="o-stat-label">🟢 Рекомендації</div><div class="o-stat-value">4</div><div class="o-stat-sub">Можливості для зростання</div></div>
+<div class="o-stat-card accent"><div class="o-stat-label">📊 Оцінка здоров'я бізнесу</div><div class="o-stat-value">7.2/10</div><div class="o-stat-sub">↑ 0.4 з минулого тижня</div></div>
+</div>
+
+<div class="ai-section"><div class="ai-section-title">🔴 Критичні проблеми</div>
+<div class="ai-card ai-critical">
+<div class="ai-card-header"><span class="ai-icon">⚠️</span><span class="ai-card-title">Товар BN-882 закінчиться через 2 дні</span></div>
+<div class="ai-card-body">«Набір для бродіння Pro» — залишок UA: 4 шт, PL: 0 шт. При поточній швидкості продажів (2 шт/день) запас вичерпається 25.04.2026.</div>
+<div class="ai-card-action"><button class="o-btn o-btn-primary" style="font-size:12px">Створити закупівлю →</button></div>
+</div>
+<div class="ai-card ai-critical">
+<div class="ai-card-header"><span class="ai-icon">⚠️</span><span class="ai-card-title">Менеджер Олена не обробила 5 замовлень</span></div>
+<div class="ai-card-body">Замовлення #RZK-20341, #PRM-8807, #OLX-3318, #RZK-20345, #PRM-8809 очікують обробки більше 24 годин. Середній час відповіді Олени зріс з 2 до 8 годин за тиждень.</div>
+<div class="ai-card-action"><button class="o-btn" style="font-size:12px">Переглянути замовлення →</button></div>
+</div>
+</div>
+
+<div class="ai-section"><div class="ai-section-title">🟡 Попередження</div>
+<div class="ai-card ai-warning">
+<div class="ai-card-header"><span class="ai-icon">📉</span><span class="ai-card-title">Маржа HRDTY48-D занадто низька: 8.3%</span></div>
+<div class="ai-card-body">Дріжджі Hot Rod 48 продаються з маржою 8.3%, що нижче порогу рентабельності (15%). Рекомендація: підняти ціну з 74₴ до 85₴ (+14.9%) або знайти дешевшого постачальника.</div>
+</div>
+<div class="ai-card ai-warning">
+<div class="ai-card-header"><span class="ai-icon">🚚</span><span class="ai-card-title">Постачальник Ferment Supply PL — 3-тя затримка поспіль</span></div>
+<div class="ai-card-body">Замовлення PO-2026-039 затримано на 8 днів. Це третя затримка за останні 2 місяці. Ризик зриву поставок. Рекомендація: знайти альтернативного постачальника.</div>
+</div>
+<div class="ai-card ai-warning">
+<div class="ai-card-header"><span class="ai-icon">📞</span><span class="ai-card-title">3 пропущені дзвінки без перезвону</span></div>
+<div class="ai-card-body">UniTalk зафіксував 2 пропущені дзвінки (12:15, 14:42), Zadarmo — 1 (09:30). Жоден не був перезвонений протягом 4 годин. Потенційна втрата клієнтів.</div>
+</div>
+</div>
+
+<div class="ai-section"><div class="ai-section-title">🟢 Рекомендації для зростання</div>
+<div class="ai-card ai-good">
+<div class="ai-card-header"><span class="ai-icon">🇵🇱</span><span class="ai-card-title">Перемістити ВА-1 на склад Польщі</span></div>
+<div class="ai-card-body">Вугілля активоване продається в Польщі в 4 рази швидше, ніж в Україні. Поточний залишок PL: 45 шт. Рекомендація: перемістити 100 шт зі складу UA (300 шт) до PL.</div>
+</div>
+<div class="ai-card ai-good">
+<div class="ai-card-header"><span class="ai-icon">📈</span><span class="ai-card-title">Rozetka — найприбутковіший канал</span></div>
+<div class="ai-card-body">Rozetka генерує 35% загального прибутку при 28% витрат. Рекомендація: збільшити асортимент на Rozetka на 15-20 позицій для зростання виручки на ~₴40,000/міс.</div>
+</div>
+<div class="ai-card ai-good">
+<div class="ai-card-header"><span class="ai-icon">💰</span><span class="ai-card-title">Дистилятор DST-500 — лідер маржі</span></div>
+<div class="ai-card-body">Маржинальність 34.4% при середньому чеку ₴3,200. Цей товар приносить найбільше прибутку на одиницю. Рекомендація: запустити рекламу на Amazon DE.</div>
+</div>
+<div class="ai-card ai-good">
+<div class="ai-card-header"><span class="ai-icon">🔄</span><span class="ai-card-title">Оптимізація цін на Allegro</span></div>
+<div class="ai-card-body">Аналіз конкурентів показує, що ваші ціни на Allegro на 12% вищі за середні. Зниження на 5-7% може збільшити обсяг продажів на 25% без втрати маржі.</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</main>
+
+<!-- PHONE PANEL -->
+<div id="phone-panel" class="o-phone-panel">
+<div class="o-phone-header"><span>📞 Вхідний дзвінок</span><span onclick="togglePhone()" style="cursor:pointer">✕</span></div>
+<div class="o-phone-body">
+<div style="font-size:14px;color:#714B67;font-weight:600">UniTalk UA</div>
+<div class="o-phone-number">+380 67 123 4567</div>
+<div class="o-phone-status">Клієнт: Іванов Сергій — Rozetka (3 замовлення)</div>
+<div class="o-phone-actions">
+<button class="o-phone-btn o-phone-btn-accept" onclick="togglePhone()">📞</button>
+<button class="o-phone-btn o-phone-btn-mute">🔇</button>
+<button class="o-phone-btn o-phone-btn-reject" onclick="togglePhone()">✕</button>
+</div>
+</div>
+</div>
+<button id="phone-fab" class="o-phone-fab" onclick="togglePhone()">📞</button>
+
+<script src="app.js"></script>
+</body>
+</html>
